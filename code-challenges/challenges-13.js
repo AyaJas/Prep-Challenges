@@ -62,6 +62,16 @@ const objectCounter = (obj) => {
 
 const stringReverse = (str) => {
     // write your code here
+    let rev = " "; var arr = [];
+
+    for (var i = 0; i <= str.length; i++) {
+        rev = str.split(" ");
+        rev.join(" ");
+    }
+    for (var j = rev.length - 1; j >= 0; j--) {
+        arr.push(rev[j]);
+    }
+    return arr.join(" ");
 
 }
 
