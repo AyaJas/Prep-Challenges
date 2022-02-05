@@ -72,7 +72,6 @@ const stringReverse = (str) => {
         arr.push(rev[j]);
     }
     return arr.join(" ");
-
 }
 
 // 3) ---------------------
