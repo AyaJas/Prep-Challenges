@@ -86,37 +86,57 @@ const replaceWords = (str) => {
 }
 
 
-    // 4) ---------------------
-    // 
-    // Write a function that "joins" the array of words together and put a comma "," after every five words
-    // ["move","it","away","from","the","street"] ==> "move it away from the, street" 
-    //
-    // ------------------------
+// 4) ---------------------
+// 
+// Write a function that "joins" the array of words together and put a comma "," after every five words
+// ["move","it","away","from","the","street"] ==> "move it away from the, street" 
+//
+// ------------------------
 
-    const arrToStr = (arr) => {
-        // write your code here
-        if (arr[4] != null) {
-            let text = arr[4].substring(0, arr[4].length) + ",";
-            arr[4] = text;
-            return arr.join(" ");
+const arrToStr = (arr) => {
+    // write your code here
+    if (arr[4] != null) {
+        let text = arr[4].substring(0, arr[4].length) + ",";
+        arr[4] = text;
+        return arr.join(" ");
+    }
+}
+
+// 5) ---------------------
+// 
+// Simon got a string manipulation question for his interview, it asked him to replace the duplicated letters in a string to an indicator and counter
+// as in the example:
+//
+// "aaaa bbb sdf" ===> "a4 b3 s1d1f1"
+//  "door" ==> "d1o2r1"
+//
+// help him by writing the function
+//
+// ------------------------
+
+const letterCounter = (str) => {
+    // write your code here
+    var current = str[0]
+    var count = 1
+    var concat = ""
+
+    for (var i = 1; i < str.length; i++) {
+
+        if (current != str[i]) {
+            if (current != " ") {
+                concat = concat + current + count;
+            } else {
+                concat = concat + " ";
+            }
+            count = 0;
+            current = str[i];
         }
-    }
-
-    // 5) ---------------------
-    // 
-    // Simon got a string manipulation question for his interview, it asked him to replace the duplicated letters in a string to an indicator and counter
-    // as in the example:
-    //
-    // "aaaa bbb sdf" ===> "a4 b3 s1d1f1"
-    //  "door" ==> "d1o2r1"
-    //
-    // help him by writing the function
-    //
-    // ------------------------
-
-    const letterCounter = (str) => {
-        // write your code here
+        count = count + 1;
 
     }
+    concat = concat + current + count;
+    return concat;
 
-    module.exports = { LastWord, LastWord_2, replaceWords, arrToStr, letterCounter };
+}
+
+module.exports = { LastWord, LastWord_2, replaceWords, arrToStr, letterCounter };
