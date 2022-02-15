@@ -71,7 +71,21 @@ const filterLinks = (str) => {
 
 const isPalindrome = (str) => {
     // write your code here
+    let string = str.toLowerCase();
+    let finalString = string.replace(/,|:/g, "")
+    let stringSplit = finalString.split(" ");
+    let newString = stringSplit.join("");
+    const stringLength = newString.length;
+    for (let i = 0; i < stringLength / 2; i++) {
+        if (newString[i] !== newString[stringLength - 1 - i]) {
+            return false;
+        }
+    }
+    return true;
 }
+
+
+
 // -------------------------------------------------------------------------------------------------------
 
 // -------------------------------------------------------------------------------------------------------
